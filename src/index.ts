@@ -34,13 +34,55 @@ pid = '23';
 
 // Enum
 enum Direction1 {
-  Up,
+  Up = 2,
   Down,
   Left,
   Right,
 }
 
-console.log(Direction1.Up);
-console.log(Direction1.Down);
-console.log(Direction1.Left);
-console.log(Direction1.Right);
+enum Direction2 {
+  Up = 'Up',
+  Down = 'Down',
+  Left = 'Left',
+  Right = 'Right',
+}
+
+// Objects
+
+const user: { id: number; name: string } = {
+  id: 1,
+  name: 'John',
+};
+
+// This is the same
+type User = {
+  id: number;
+  name: string;
+};
+
+const user2: User = {
+  id: 2,
+  name: 'Mark',
+};
+
+// Type Assertion
+let cid: any = 1;
+// let customerId=<number> cid;
+let customerId = cid as number;
+
+customerId = 15;
+
+// Functions
+
+// return is also number
+function add(x: number, y: number): number {
+  return x + y;
+}
+
+// Void
+function log(message: string | number): void {
+  console.log(message);
+}
+
+log(1);
+log('Text');
